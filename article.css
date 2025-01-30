@@ -1,0 +1,59 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.mainall {
+    width:50%;
+    height:auto;
+    margin:auto;
+}
+
+.title {
+    width:500px;
+    height:auto;
+    text-align: center;
+    margin:auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-bottom: 5px;
+    border-bottom: double 3px #ccc;
+}
+
+p {
+    font-family: "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+    font-weight: 500;
+}
+
+h7 {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+}
+
+.picture {
+    text-align: center;
+}
+
+.picture img {
+    width:100%;
+    height:50%;
+    object-fit: cover;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.article img {
+    width:50px;
+    height:50px;
+    margin-left: 30px;
+}
+
+.map {
+    margin-top: 30px;
+    border: solid 2px
+}
+
+.map iframe{
+    width:100%;
+    height:500px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="jp" >
+    <head>
+        <meta charset="utf-8"/>
+        <title>N blog -TOP-</title>
+        <link rel="icon" href="写真/icon.png"/>
+        <link rel="stylesheet" href="header.css"/>
+        <link rel="stylesheet" href="visualsheet.css"/>
+        <link rel="stylesheet" href="footer.css"/>
+    </head>
+    <body>
+        <header>
+            <div id="header"></div> 
+        </header>
+        <main>
+            <div class="mainvisual">
+                <img src="写真/main.png"/>
+            </div>
+            <div class="top">
+                <div class="title" id="saikin">
+                    <h7>最近の投稿</h7>
+                </div> 
+                <div class="maintop">
+                    <div class="slide" id="slide">
+                        <div class="top1">   
+                            <a href="article.html">
+                                <img src="写真/parklet.png"/>
+                                <div class="top1txt">
+                                    <h1>Coffee Diary #9</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="top2">  
+                        <a href="article.html">
+                            <img src="写真/come to life.png"/>
+                            <div class="top1txt">
+                                <h1>Coffee Diary #8</h1>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="top3">   
+                        <a href="article.html">
+                        <img src="写真/port.png"/>
+                        <div class="top1txt">
+                            <h1>Coffee Diary #7</h1>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                    <!-- 左右のボタン -->
+                    <span id="prev" class="prev"></span>
+                    <span id="next" class="next"></span>
+            </div>
+                <div class="inji">
+                    <!-- インジケーター -->
+                    <ul class="indicator" id="indicator">
+                    <li class="list"></li>
+                    <li class="list"></li>
+                    <li class="list"></li>
+                    </ul>
+                </div>
+            <div class="title">
+                <h7>おすすめ記事</h7>
+            </div> 
+            <div class="center">
+                <dic class="inf1">
+                    <p>- ラーメン日記 day7</p>
+                    <a href="article.html">
+                        <img src="写真/tonikaku.png"/>
+                    </a>
+                    </dic>
+                <dic class="inf2">
+                    <p>- HITSUJIBUNGAKU LIVE</p>
+                    <a href="article.html">
+                        <img src="写真/hitsuji.png"/>
+                    </a>        
+                </dic>
+            </div>
+            <div class="center2">
+                <dic class="inf3">
+                    <p>- ラーメン日記 day28</p>
+                    <a href="article.html">
+                        <img src="写真/oni.png"/>
+                    </a>
+                </dic>
+                <dic class="inf4">
+                    <p>- Diary <2023/10/11></p>
+                    <a href="article.html">
+                        <img src="写真/burger.png"/>
+                    </a>
+                </dic>
+            </div>
+            <div class="title" id="prof">
+                <h7>Profile</h7>
+            </div>
+            <div class="profileinf">
+                <div class="prof">
+                    <h3 class="profiletitle">Profile</h3>
+                    <p>2001年（平成13年）生まれ</p>
+                    <p>富山県出身</p>
+                    <p>親の影響で中学時代から珈琲を飲み始めた　　　　　　　　　</p>
+                    <p>それ以来ずっと飲んでいる</p>
+                    <p>趣味はカフェ巡りや旅行、散歩</p>
+                    <p>中身が30代や40代とよく言われる</p>
+                </div>
+                <div class="profileimg">
+                    <img src="写真/profile.png"/>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div id="footer"></div> 
+        </footer>
+
+        <script>
+            // header.htmlを読み込む
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        </script>
+        <script type="text/javascript" src="visual.js"></script>
+    </body>
+</html>
