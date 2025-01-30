@@ -21,12 +21,12 @@
                 <div class="comment">
                     <p>お問い合わせは以下のフォームにご入力をお願いします。</p>
                 </div>
-                <form action="http://localhost/send_email.php" method="post"><br><br><br>
+                <form action="send_email.php" method="post"><br><br><br>
                     <label for="name">お名前:</label><br>
                     <input type="text" id="name" name="name" id="name" required><br><br>
 
                     <label for="name">カタカナ:</label><br>
-                    <input type="text" id="kname" name="kname" id="kname" required><br><br>
+                    <input type="text" id="kname" name="kname" id="kname" pattern="^[ァ-ヶー]+$" required><br><br>
         
                     <label for="email">メールアドレス:</label><br>
                     <input type="email" id="email" name="email" id="email" required><br><br>
