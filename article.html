@@ -134,7 +134,7 @@
                 if (comment.trim() !== '') {
                     // Ajaxリクエストを送信
                     $.ajax({
-                        url: 'submit_comment.php', // サーバーサイドのPHPスクリプト（後で作成）
+                        url: '/submit_comment.php', // サーバーサイドのPHPスクリプト（後で作成）
                         type: 'POST',
                         data: { comment: comment },
                         success: function(response) {
