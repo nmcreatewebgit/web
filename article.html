@@ -85,16 +85,25 @@
                 <div class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3236.3114559327887!2d139.93592877651577!3d35.792286472551744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188314b9129091%3A0x69358633bf0539ae!2sSunlit%20Burger!5e0!3m2!1sja!2sjp!4v1738048643595!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div id="comments-section">
-                    <h2>コメント</h2>
-                    <div id="comment-list">
-                      <!-- コメント一覧がここに表示されます -->
-                    </div>
-                    <div id="comment-form">
-                      <input type="text" id="comment-text" placeholder="コメントを入力"></textarea>
-                      <button id="submit-comment">コメントを投稿</button>
-                    </div>
-                  </div>
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://nmao.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
         </main>
         <footer>
@@ -114,55 +123,6 @@
                     document.getElementById('footer').innerHTML = data;
                 })
                 .catch(error => console.error('Error loading footer:', error));             
-            
-    // コメントの保存
-    document.getElementById('submit-comment').addEventListener('click', function() {
-      const commentText = document.getElementById('comment-text').value;
-      if (commentText.trim() !== "") {
-        const commentData = {
-          username: "ゲスト",  // 実際のユーザー名を使う（セッション等から）
-          comment: commentText
-        };
-
-        // コメントをローカルストレージに保存
-        let comments = JSON.parse(localStorage.getItem('comments')) || [];
-        comments.push(commentData);
-        localStorage.setItem('comments', JSON.stringify(comments));
-
-        document.getElementById('comment-text').value = ''; // テキストエリアをクリア
-
-        // コメントを表示
-        displayComments();
-      } else {
-        alert("コメントを入力してください");
-      }
-    });
-
-    // コメントを表示
-    function displayComments() {
-      const commentList = document.getElementById('comment-list');
-      commentList.innerHTML = ''; // 一度リセット
-
-      const comments = JSON.parse(localStorage.getItem('comments')) || [];
-      comments.forEach(function(comment) {
-        const commentDiv = document.createElement('div');
-        commentDiv.classList.add('comment');
-        
-        const username = document.createElement('strong');
-        username.textContent = comment.username;
-        commentDiv.appendChild(username);
-        
-        const commentText = document.createElement('p');
-        commentText.textContent = comment.comment;
-        commentDiv.appendChild(commentText);
-
-        commentList.appendChild(commentDiv);
-      });
-    }
-
-    // ページが読み込まれた時にコメントを表示
-    window.onload = function() {
-      displayComments();
-    };
         </script>
+        <script id="dsq-count-scr" src="//nmao.disqus.com/count.js" async></script>
     </body>
